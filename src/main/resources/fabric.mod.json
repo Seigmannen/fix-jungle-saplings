@@ -5,18 +5,18 @@
 	"name": "Fix Jungle Saplings",
 	"description": "Fixes Jungle Saplings drop rates to match other trees.",
 	"authors": [
-      {
-        "name":  "Ferdinand Keller",
-        "contact": {
-          "email": "ferdinand.keller@proton.me",
-          "homepage": "https://ferdinandkeller.dev"
-        }
-      }
+		{
+			"name": "Ferdinand Keller",
+			"contact": {
+				"email": "ferdinand.keller@proton.me",
+				"homepage": "https://ferdinandkeller.dev"
+			}
+		}
 	],
 	"contact": {
 		"homepage": "https://modrinth.com/mod/fix-jungle-saplings",
 		"sources": "https://github.com/ferdinandkeller/fix-jungle-saplings",
-        "issues": "https://github.com/ferdinandkeller/fix-jungle-saplings/issues"
+		"issues": "https://github.com/ferdinandkeller/fix-jungle-saplings/issues"
 	},
 	"license": "MIT",
 	"icon": "assets/fix-jungle-saplings/icon.png",
@@ -34,7 +34,7 @@
 	},
 	"depends": {
 		"fabricloader": ">=0.17.2",
-		"minecraft": "1.21.9",
+		"minecraft": "1.21.10",
 		"java": ">=21"
 	},
 	"suggests": {}
