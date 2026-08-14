@@ -2,11 +2,10 @@ package dev.ferdinandkeller.fixjunglesaplings;
 
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
-import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
-import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
-import net.minecraft.block.Blocks;
-import net.minecraft.registry.RegistryWrapper;
-import net.minecraft.resource.featuretoggle.FeatureFlags;
+import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
+import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootSubProvider;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.core.HolderLookup;
 
 import java.util.Collections;
 import java.util.concurrent.CompletableFuture;
@@ -20,16 +19,16 @@ public class FixJungleSaplingsDataGenerator implements DataGeneratorEntrypoint {
 	}
 }
 
-class FixJungleSaplingsBlockLootTableProvider extends FabricBlockLootTableProvider {
-    protected FixJungleSaplingsBlockLootTableProvider(FabricDataOutput dataOutput, CompletableFuture<RegistryWrapper.WrapperLookup> registryLookup) {
-        super(dataOutput, registryLookup);
+class FixJungleSaplingsBlockLootTableProvider extends FabricBlockLootSubProvider {
+    protected FixJungleSaplingsBlockLootTableProvider(FabricPackOutput packOutput, CompletableFuture<HolderLookup.Provider> registriesFuture) {
+        super(packOutput, registriesFuture);
     }
 
     @Override
     public void generate() {
-        addDrop(
+        add(
             Blocks.JUNGLE_LEAVES,
-            leavesDrops(
+            createLeavesDrops(
                 Blocks.JUNGLE_LEAVES,
                 Blocks.JUNGLE_SAPLING,
                 1/20f, 1/16f, 1/12f, 1/10f
